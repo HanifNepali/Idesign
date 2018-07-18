@@ -1,0 +1,33 @@
+{
+  "name": "idesign",
+  "version": "1.0.0",
+  "description": "Agency website",
+  "main": "js/main.js",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta",
+    "jquery": "^3.3.1",
+    "mixitup": "^3.3.0",
+    "owl.carousel": "^2.3.4",
+    "popper.js": "^1.11.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "onchange": "^4.0.0",
+    "parallelshell": "^3.0.2",
+    "rimraf": "^2.6.2",
+    "usemin-cli": "^0.5.1"
+  },
+  "scripts": {
+    "start": "npm run watch:scss",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:scss": "node-sass scss/main.scss -o css/",
+    "watch:scss": "parallelshell \"npm run build:scss\" \"npm run build:scss -- -w\"",
+    "clean": "rimraf dist",
+    "copyfonts": "copyfiles -f webfonts/* dist/webfonts",
+    "imagemin": "imagemin images/* -o dist/images",
+    "usemin": "usemin index.html -d dist -o dist/index.html",
+    "build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin"
+  },
+  "author": "Hanif Nepali",
+  "license": "ISC"
+}

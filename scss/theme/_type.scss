@@ -1,0 +1,48 @@
+h1{
+	@include font-builder($header-font, $h1-font-size,$light-gray, uppercase);
+	word-spacing:5px;
+	@include media-breakpoint-down(md){
+		font-size:$h1-font-size-md;
+	}
+	@include media-breakpoint-down(sm){
+		font-size:$h1-font-size-sm;
+	}
+	@include media-breakpoint-down(xs){
+		font-size:$h1-font-size-xs;
+	}
+}
+
+h2{
+	@include font-builder($header-font, $h2-font-size, $light-gray,uppercase);
+	font-weight:700;
+	width:100%;
+	@include media-breakpoint-down(xs){
+		font-size:$h2-font-size-xs;
+	}
+}
+
+h3{
+	@include font-builder($body-font, $h3-font-size,$light-gray, uppercase);
+	letter-spacing:1px;
+	margin-bottom:2rem;
+	@include media-breakpoint-down(sm){
+		font-size:$h3-font-size-sm;
+	}
+}
+
+h4{
+	@include font-builder($header-font, $h4-font-size,$light-gray, uppercase);
+	font-weight:600;
+	@include media-breakpoint-down(md){
+		font-size:$h4-font-size-md;
+	}
+}
+
+h5{
+	@include font-builder($sub-header-font, $h5-font-size,$light-gray,lowercase);
+	font-weight:700;
+	word-spacing:5px;
+	@include media-breakpoint-down(xs){
+		font-size:$h5-font-size-xs;
+	}
+}

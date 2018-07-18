@@ -1,0 +1,407 @@
+.section-title{
+		margin-bottom:4rem;			
+		h5{			
+			&:after{
+				content:'';
+				height:2px;
+				margin-top:-2px;
+				display:block;
+				background-color:$yellow;
+			}
+		}
+}//end of section-title
+.item-icon{			
+			font-size:2rem;
+			margin-bottom:1.5rem;
+			color:$yellow;
+			@include media-breakpoint-down(sm){
+				font-size:1.5rem;
+			}
+}
+
+.item-header{
+	margin-bottom:1rem;		
+		a{
+			&:after{
+				content:'';
+				width:0;
+				height:2px;
+				display:block;
+				margin:0 auto;
+				background-color:$yellow;
+				@include transition();
+			}
+			&:hover:after{
+				width:25%;						
+			}				
+		}//end of a	
+		.active{
+				h4{
+				color:$yellow;						
+				}
+			}
+}
+
+.item-description{
+	margin-top:-1rem;
+	@include media-breakpoint-down(xs){
+		font-size:0.9rem;
+		}
+}
+		
+@-webkit-keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}  
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+ }
+
+.owl-theme {
+	.owl-dots{
+	 .owl-dot.active{
+	  		span{
+			background-color:$yellow;
+			}
+		}	
+	}
+}
+
+
+/*---------ABOUT--------------*/
+
+#about{
+	
+	color:$light-gray;
+	.about-item{
+		padding:0 1rem;
+		margin-bottom:2rem;
+		text-align:center;
+		h4{
+			margin-bottom:1.5rem;
+		}		
+		.item-description{
+			text-align:left;
+		}
+	}
+}
+
+
+/*---------SERVICES ---------------*/
+
+#services{
+	padding-left:0;
+	padding-right:0;
+
+	#services-content{
+		margin-bottom:2rem;
+	}
+	#service-details{		
+		.col-md-6{
+ 			padding:0;
+ 		}
+	}
+
+ .service-info{
+ 	@include background-builder(url('../images/service-info.jpg'),  no-repeat, cover, center);
+ 	height:33rem;
+ 	position:relative;
+ 	@include media-breakpoint-down(sm){
+ 		display:none;
+ 	}
+
+ 	.overlay2{
+ 		width:100%;
+ 		height:100%;
+ 		background:$dark-gray;
+ 		opacity:0.9; 		
+ 	}
+
+ 	.info-details{
+ 		position:absolute;
+ 		top:60%;
+ 		left:10%;
+
+ 		span{
+ 			&:first-child{
+ 				@include font-builder($header-font, 3rem, $yellow, uppercase);
+ 			}
+ 			text-align:left;
+ 			@include font-builder($header-font, 1.1rem, $yellow, uppercase);
+ 			font-weight:600;
+ 			display:block;
+ 		}
+ 	}
+ }
+
+	.service-description{
+		@include flexbox();
+		@include flex-direction(column);
+		@include justify-content(center);
+		@include align-items(center);
+		height:33rem;
+		background-color:$dark-gray;		
+		padding:0 4rem;
+		text-align:left;
+
+		@include media-breakpoint-down(sm){
+			height:30rem;
+		}
+		.tab-hide{
+			display:none;
+			opacity:0;
+		}
+		.tab-show{
+			display:block;
+			opacity:1;
+			-webkit-animation:fadeIn 1.5s;
+			animation:fadeIn 1.5s;
+		}
+	}
+}
+
+/*---------PRICING-----------------*/
+
+#pricing-card{
+	
+		.diff-col{
+
+			@media screen and (max-width:1199px) and (min-width: 992px)
+			{
+				flex:0 0 50%;
+				max-width:50%;
+			}
+			
+			.single-card{					
+					
+					border:1px solid $light-gray;					
+					padding:2.5rem 2rem;
+					margin-bottom:3rem;
+					h3{
+						font-weight:600;
+						font-size:$h3-font-size-sm;
+						color:$yellow;
+					}
+					p{
+						span{
+							font-size:2.25rem;
+						}
+					}
+					ul{
+						li{							
+							padding:.75rem 0;
+						}
+					}
+					a{						
+						padding:0.25rem 2rem;
+						display:inline-block;
+						margin-top:2rem;						
+						font-weight:600;						
+					}
+					.btn-buy{
+						border:1px solid $yellow;
+					}
+				}//end of single card
+			.standard{
+				background-color:rgba(255,255,0,0.9);
+				border:0;
+				color:$dark-gray;
+				h3{
+					color:$dark-gray;
+				}
+				a{
+					color:$dark-gray;
+				}
+				.btn-buy{
+					border-color:$dark-gray;
+				}
+			}
+		}
+}
+
+/*---------TEAM-------------------*/
+
+#team-members{
+	.single-member{
+		@include media-breakpoint-down(md){
+		margin-bottom:3rem;
+		}
+		.member-image{
+			position:relative;
+			.overlay3{
+				position:absolute;
+				top:0;
+				bottom:0;
+				left:0;
+				right:0;
+				background:rgba(0,0,0,0.7);
+				display:none;
+				opacity:0;
+				@include media-breakpoint-down(sm){
+					display:block;
+					opacity:1;
+				}
+				.social-nav{
+							margin-top:50%;
+							@include media-breakpoint-down(sm){
+								margin-top:70%;
+								}
+							li{
+								display:inline-block;
+								padding:0 1rem;
+								border-right:1px solid $yellow;
+									&:last-child{
+										border-right:none;
+									}								
+								a{
+									color:$yellow;
+									font-size:1rem;								
+								}
+							}						
+					}
+			}
+
+			&:hover{
+				.overlay3{
+					display:block;
+					opacity:1;
+					-webkit-animation:fadeIn 1.5s;					
+				}
+			}		
+		}
+
+		.member-name{
+			@include font-builder($header-font, 1rem, $light-gray, uppercase);
+			font-weight:600;
+			margin-top:2rem;
+			@include media-breakpoint-down(md)
+			{
+				font-size:0.9rem;
+			}
+			p{
+				margin-bottom:0.5rem;
+			}
+		}
+		.member-position{
+			@include font-builder($body-font, 1rem, $light-gray, uppercase);
+			font-weight:300;
+			@include media-breakpoint-down(md)
+			{
+				font-size:0.9rem;
+			}
+
+		}
+	}
+}
+
+/*---------TESTIMONIALS------------*/
+
+#clients-msgs{
+	.single-msg{
+		padding:3rem 3rem;
+		@include media-breakpoint-down(xs){
+			padding:1.5rem 1.5rem;
+		}
+		.client-image{
+			width:100px;
+			height:100px;
+			display:inline-block;
+			border-radius:50%;
+			border:3px solid $yellow;
+			text-align:center;
+			margin-bottom:4rem;
+
+			// @include media-breakpoint-down(xs){
+			//   margin-bottom:2.5rem;
+			// }
+
+			i{
+				font-size:2rem;
+				line-height:100px;
+				color:$yellow;
+			}
+		}
+	}
+}
+
+/*---------PORTFOLIO---------------*/
+#portfolio{
+	padding-left:0;
+	padding-right:0;
+
+	#portfolio-headers{
+		margin-bottom:3rem;
+		@include flexbox();
+		@include justify-content(center);
+		a{			
+			font-family:$header-font;
+			font-size:1rem;
+			padding:0 1rem;
+			cursor:pointer;
+			@include media-breakpoint-down(sm){
+				font-size:0.8rem;
+			}
+		}
+		.active{
+			color:$yellow;
+		}
+	}
+
+	#portfolio-items{
+		.col-md-3, .col-sm-6, .col-12{
+			padding:0;
+		}
+	}
+}
+
+/*---------CONTACT-----------------*/
+#contact{
+
+	@include media-breakpoint-down(xs){
+		padding-left:0;
+		padding-right:0;
+	}
+
+	#contact-form{		
+		margin-bottom:3rem;
+		padding-top:5rem;
+		@include media-breakpoint-down(sm){
+		     padding-top:4rem;
+		}
+		form{
+			.form-control{
+				border-radius:0;
+				color:$light-gray;
+				padding:1.25rem 1rem;
+				margin-bottom:1.5rem;
+				background-color:transparent;
+				border-color:$light-gray;
+				@include media-breakpoint-down(sm){
+					padding:1.1rem 1rem;
+				}
+			}
+
+			textarea{
+				height:148px;
+				resize:none;
+			}
+
+			.btn-send{
+				width:100%;
+				padding:1.1rem 0.75rem;
+				background-color:transparent;
+				border:1px solid $yellow;
+				color:$yellow;
+				font-weight:600;
+				text-transform:uppercase;
+				@include media-breakpoint-down(sm){
+					padding:1rem 0.75rem;
+				}
+			}
+		}
+	}
+}
+		
+
+		
